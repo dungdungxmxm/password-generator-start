@@ -12,26 +12,19 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 #Eazy Level - Order not randomised:
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91p
+
+#Hard Level - Order of characters randomised:
+#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 password = []
-total_char = nr_letters + nr_symbols + nr_numbers
-length_letters = len(letters)
-length_numbers = len(numbers)
-length_symbols = len(symbols)
 
 for i in range(0, nr_letters):
-  rand_idx = random.randint(0, length_letters - 1)
-  rand_letter = letters[rand_idx]
-  password.append(rand_letter)
+  password.append(random.choice(letters))
 
 for i in range(0, nr_symbols):
-  rand_idx = random.randint(0, length_symbols - 1)
-  rand_symbol = symbols[rand_idx]
-  password.append(rand_symbol)
+  password.append(random.choice(symbols))
 
 for i in range(0, nr_numbers):
-  rand_idx = random.randint(0, length_numbers - 1)
-  rand_number = numbers[rand_idx]
-  password.append(rand_number)
+  password.append(random.choice(numbers))
 
 # Origin pass
 pass_str = ""
@@ -46,7 +39,3 @@ for c in password:
   randPass_str += c
 print(password)
 print(f"Your password is: {randPass_str}")
-
-
-#Hard Level - Order of characters randomised:
-#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
